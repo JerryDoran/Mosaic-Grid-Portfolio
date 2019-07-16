@@ -88,6 +88,9 @@ body {
 
   // Take up the full space of main content area minus the padding
   height: 100%;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
 }
 
 .portfolio-item {
@@ -97,4 +100,47 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &.small {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+
+  &.medium {
+    grid-row: span 2;
+    grid-column: span 2;
+
+    // This means to start at the third column of the grid and span or take up two columns
+    // grid-column: 3 / span 2;
+  }
+
+  &.large {
+    grid-row: span 3;
+    grid-column: span 3;
+  }
+
+  &.tall {
+    grid-row: span 3;
+    grid-column: span 2;
+  }
+
+  &.wide {
+    grid-row: span 2;
+    grid-column: span 3;
+  }
+
+  &.two {
+    background-image: url('https://images.pexels.com/photos/887821/pexels-photo-887821.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $black;
+    background-blend-mode: multiply;
+    color: $light-gray;
+    transition: all 2s ease-in-out;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
 }
